@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">E-RTLH Bojonegoro</string>
+    <string name="survey_baru">Survey Baru</string>
+    <string name="simpan_survey">Simpan Survey</string>
+    <string name="foto_dalam_rumah">Foto Dalam Rumah</string>
+    <string name="foto_tampak_samping_depan">Foto Tampak Samping Depan</string>
+    <string name="nama">Nama</string>
+    <string name="fondasi">Fondasi</string>
+    <string name="nik">NIK</string>
+    <string name="luas_rumah">Luas Rumah (m<sup><small>2</small></sup>)</string>
+    <string name="kolom">Kolom</string>
+    <string name="kuda_kuda">Kuda-Kuda</string>
+    <string name="nomor_kk">Nomor KK</string>
+    <string name="sloof">Sloof</string>
+    <string name="ring_balok">Ring Balok</string>
+    <string name="lantai">Lantai</string>
+    <string name="alamat_dusun_rt_rw">Alamat (Dusun, RT/RW)</string>
+    <string name="dinding">Dinding</string>
+    <string name="foto_ktp">Foto KTP</string>
+    <string name="status_penguasaan_lahan">Status penguasaan lahan</string>
+    <string name="penutup_atap">Penutup Atap</string>
+    <string name="titik_koordinat_latitude_longitude">Titik Koordinat (Latitude - Longitude)</string>
+    <string name="biodata">Biodata</string>
+    <string name="total_penghasil_per_bulan">Total Penghasil per Bulan</string>
+    <string name="jumlah_penghuni_rumah">Jumlah Penghuni Rumah</string>
+    <string name="jumlah_kk_dalam_1_rumah">Jumlah KK dalam 1 Rumah</string>
+    <string name="kecamatan">Kecamatan</string>
+    <string name="desa_kelurahan">Desa/Kelurahan</string>
+    <string name="detail_riwayat_survey">Detail Riwayat Survey</string>
+    <string name="perbarui_data_survey">Perbarui Data Survey</string>
 </resources>
