@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
@@ -19,6 +17,8 @@ import com.sounekatlogo.ertlhbojonegoro.utils.Common
 class RegisterUserActivity : AppCompatActivity() {
     private var _binding: ActivityRegisterUserBinding? = null
     private val binding get() = _binding!!
+    private var radioGroup: RadioGroup? = null
+    lateinit var radioButton: RadioButton
     private var desa = ""
     private var kecamatans = ""
     private var desaList = ArrayList<DesaModel>()
@@ -119,6 +119,11 @@ class RegisterUserActivity : AppCompatActivity() {
             val username = username.text.toString().trim()
             val email = email.text.toString().trim()
             val password = password.text.toString().trim()
+            radioGroup = findViewById(R.id.userRoles)
+            val selectedOption: Int = radioGroup!!.checkedRadioButtonId
+            radioButton = findViewById(selectedOption)
+            val userRoles = radioButton.text.toString().lowercase().trim()
+
 
             if (username.isEmpty()) {
                 Toast.makeText(
@@ -144,13 +149,19 @@ class RegisterUserActivity : AppCompatActivity() {
                     "Desa/kelurahan harus diisi",
                     Toast.LENGTH_SHORT
                 ).show()
+            } else if (userRoles == "") {
+                Toast.makeText(
+                    this@RegisterUserActivity,
+                    "Role Harus dipilih",
+                    Toast.LENGTH_SHORT
+                ).show()
             } else {
                 progressBar.visibility = View.VISIBLE
 
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener {
                         if (it.isSuccessful) {
-                            saveUserData(email, username, password)
+                            saveUserData(email, username, password, userRoles)
                         }
                     }
 
@@ -158,8 +169,11 @@ class RegisterUserActivity : AppCompatActivity() {
         }
     }
 
-    private fun saveUserData(email: String, username: String, password: String) {
+    private fun saveUserData(email: String, username: String, password: String, userRoles: String) {
         val uid = FirebaseAuth.getInstance().currentUser!!.uid
+        if (userRoles != "user") {
+            desa = ""
+        }
         val data = mapOf(
             "uid" to uid,
             "username" to username,
@@ -167,6 +181,7 @@ class RegisterUserActivity : AppCompatActivity() {
             "password" to password,
             "desa" to desa,
             "kecamatan" to kecamatans,
+            "role" to userRoles,
         )
 
         FirebaseFirestore
@@ -229,4 +244,6 @@ class RegisterUserActivity : AppCompatActivity() {
         super.onDestroy()
         _binding = null
     }
+
+
 }
