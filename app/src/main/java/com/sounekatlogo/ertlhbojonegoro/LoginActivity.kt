@@ -59,11 +59,13 @@ class LoginActivity : AppCompatActivity() {
                                 .addOnSuccessListener { response ->
                                     val desa = "" + response.data!!["desa"]
                                     val kecamatan = "" + response.data!!["kecamatan"]
+                                    val role = "" + response.data!!["role"]
 
                                     val sharedPreference =  getSharedPreferences("USER_DATA",
                                         Context.MODE_PRIVATE)
                                     val editor = sharedPreference.edit()
                                     editor.putString("desa",desa)
+                                    editor.putString("role",role)
                                     editor.putString("kecamatan", kecamatan)
                                     editor.putString("uid",uid)
                                     editor.apply()

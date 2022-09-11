@@ -3,6 +3,7 @@ package com.sounekatlogo.ertlhbojonegoro.register
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
@@ -161,7 +162,7 @@ class RegisterUserActivity : AppCompatActivity() {
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener {
                         if (it.isSuccessful) {
-                            saveUserData(email, username, password, userRoles)
+                            saveUserData(email, username, userRoles)
                         }
                     }
 
@@ -169,8 +170,9 @@ class RegisterUserActivity : AppCompatActivity() {
         }
     }
 
-    private fun saveUserData(email: String, username: String, password: String, userRoles: String) {
+    private fun saveUserData(email: String, username: String, userRoles: String) {
         val uid = FirebaseAuth.getInstance().currentUser!!.uid
+        Log.e("UID", uid)
         if (userRoles != "user") {
             desa = ""
         }
@@ -178,7 +180,7 @@ class RegisterUserActivity : AppCompatActivity() {
             "uid" to uid,
             "username" to username,
             "email" to email,
-            "password" to password,
+//            "password" to password,
             "desa" to desa,
             "kecamatan" to kecamatans,
             "role" to userRoles,
@@ -191,6 +193,8 @@ class RegisterUserActivity : AppCompatActivity() {
             .set(data)
             .addOnCompleteListener {
                 if (it.isSuccessful) {
+//                    binding.progressBar.visibility = View.GONE
+//                    showSuccessDialog()
 
                     FirebaseAuth.getInstance().signOut()
                     FirebaseAuth.getInstance()
@@ -204,6 +208,8 @@ class RegisterUserActivity : AppCompatActivity() {
                             }
                         }
 
+//                } else {
+//                    showFailureDialog()
                 }
             }
     }

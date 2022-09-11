@@ -19,15 +19,12 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.sounekatlogo.ertlhbojonegoro.databinding.ActivityHomeBinding
 import com.sounekatlogo.ertlhbojonegoro.history_data.HistoryActivity
+import com.sounekatlogo.ertlhbojonegoro.history_data.HistoryServerActivity
 import com.sounekatlogo.ertlhbojonegoro.register.RegisterUserActivity
 import com.sounekatlogo.ertlhbojonegoro.survey.SurveyActivity
 import com.sounekatlogo.ertlhbojonegoro.survey.SurveyAdapter
 import com.sounekatlogo.ertlhbojonegoro.survey.SurveyModel
-import com.sounekatlogo.ertlhbojonegoro.utils.Common
 import com.sounekatlogo.ertlhbojonegoro.utils.DBHelper
-import java.io.IOException
-import java.net.HttpURLConnection
-import java.net.URL
 
 
 class HomeActivity : AppCompatActivity() {
@@ -35,6 +32,7 @@ class HomeActivity : AppCompatActivity() {
     private val binding get() = _binding!!
     private var adapter: SurveyAdapter? = null
     private var uid = ""
+    private var role = ""
     private var surveyList = ArrayList<SurveyModel>()
 
     override fun onResume() {
@@ -60,8 +58,12 @@ class HomeActivity : AppCompatActivity() {
             }
             historyData.setOnClickListener {
                 val intent = Intent(this@HomeActivity, HistoryActivity::class.java)
-                intent.putExtra(HistoryActivity.UID, uid)
+//                intent.putExtra(HistoryActivity.UID, uid)
                 startActivity(intent)
+            }
+            statusData.setOnClickListener {
+                Log.e("Cek", "OK")
+                startActivity(Intent(this@HomeActivity, HistoryServerActivity::class.java))
             }
             syncData.setOnClickListener {
                 if(binding.textView4.text.toString().toInt() > 0) {
@@ -140,7 +142,8 @@ class HomeActivity : AppCompatActivity() {
                                                     "lantai" to finalSurveyList[i].lantai1,
                                                     "penutupAtap" to finalSurveyList[i].penutupAtap1,
                                                     "statusPenguasaanLahan" to finalSurveyList[i].statusPenguasaanLahan1,
-                                                    "koordinat" to finalSurveyList[i].koordinat1,
+                                                    "longitude" to finalSurveyList[i].longitude1,
+                                                    "latitude" to finalSurveyList[i].latitude1,
                                                     "ktp" to ktp,
                                                     "samping" to dalam,
                                                     "dalamRumah" to samping,
@@ -255,7 +258,8 @@ class HomeActivity : AppCompatActivity() {
                 val lantai = cursor.getString(cursor.getColumnIndex(DBHelper.lantai))
                 val penutup = cursor.getString(cursor.getColumnIndex(DBHelper.penutupAtap))
                 val statusPenguasaanLahan = cursor.getString(cursor.getColumnIndex(DBHelper.statusPenguasaanLahan))
-                val koordinat = cursor.getString(cursor.getColumnIndex(DBHelper.koordinat))
+                val longitude = cursor.getString(cursor.getColumnIndex(DBHelper.longitude))
+                val latitude = cursor.getString(cursor.getColumnIndex(DBHelper.latitude))
                 val ktp = cursor.getString(cursor.getColumnIndex(DBHelper.ktp))
                 val samping = cursor.getString(cursor.getColumnIndex(DBHelper.samping))
                 val dalam = cursor.getString(cursor.getColumnIndex(DBHelper.dalamRumah))
@@ -286,7 +290,8 @@ class HomeActivity : AppCompatActivity() {
                         lantai1 = lantai,
                         penutupAtap1 = penutup,
                         statusPenguasaanLahan1 = statusPenguasaanLahan,
-                        koordinat1 = koordinat,
+                        longitude1 = longitude,
+                        latitude1 = latitude,
                         ktp1 = ktp,
                         samping1 = samping,
                         dalamRumah1 = dalam,
@@ -319,7 +324,8 @@ class HomeActivity : AppCompatActivity() {
                     val lantai = cursor.getString(cursor.getColumnIndex(DBHelper.lantai))
                     val penutup = cursor.getString(cursor.getColumnIndex(DBHelper.penutupAtap))
                     val statusPenguasaanLahan = cursor.getString(cursor.getColumnIndex(DBHelper.statusPenguasaanLahan))
-                    val koordinat = cursor.getString(cursor.getColumnIndex(DBHelper.koordinat))
+                    val longitude = cursor.getString(cursor.getColumnIndex(DBHelper.longitude))
+                    val latitude = cursor.getString(cursor.getColumnIndex(DBHelper.latitude))
                     val ktp = cursor.getString(cursor.getColumnIndex(DBHelper.ktp))
                     val samping = cursor.getString(cursor.getColumnIndex(DBHelper.samping))
                     val dalam = cursor.getString(cursor.getColumnIndex(DBHelper.dalamRumah))
@@ -350,7 +356,8 @@ class HomeActivity : AppCompatActivity() {
                             lantai1 = lantai,
                             penutupAtap1 = penutup,
                             statusPenguasaanLahan1 = statusPenguasaanLahan,
-                            koordinat1 = koordinat,
+                            longitude1 = longitude,
+                            latitude1 = latitude,
                             ktp1 = ktp,
                             samping1 = samping,
                             dalamRumah1 = dalam,
@@ -397,8 +404,16 @@ class HomeActivity : AppCompatActivity() {
     private fun checkRole() {
         val prefs = getSharedPreferences("USER_DATA", Context.MODE_PRIVATE)
         uid = prefs.getString("uid", "").toString()
-        if(uid == Common.uid) {
-            binding.registerUser.visibility = View.VISIBLE
+        role = prefs.getString("role", "user").toString()
+        if(role == "admin") {
+            binding.registerUserLayout.visibility = View.VISIBLE
+            binding.addDataLayout.visibility = View.GONE
+            binding.historyDataLayout.visibility = View.GONE
+            binding.syncDataLayout.visibility = View.GONE
+        } else if (role == "verifikator") {
+            binding.addDataLayout.visibility = View.GONE
+            binding.historyDataLayout.visibility = View.GONE
+            binding.syncDataLayout.visibility = View.GONE
         }
         try {
             getData()

@@ -8,10 +8,8 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.location.LocationManager
-import android.net.Uri
 import android.os.Bundle
 import android.os.Looper
-import android.os.PersistableBundle
 import android.provider.Settings
 import android.util.Log
 import android.view.View
@@ -88,7 +86,8 @@ class SurveyActivity : AppCompatActivity() {
                 showProgressBar()
                 ImagePicker.with(this@SurveyActivity)
                     .cameraOnly()
-                    .compress(1024)
+//                    .compress(1024)
+                    .maxResultSize(600,800)
                     .start(REQUEST_KTP_GALLERY)
             }
 
@@ -96,7 +95,8 @@ class SurveyActivity : AppCompatActivity() {
                 showProgressBar()
                 ImagePicker.with(this@SurveyActivity)
                     .cameraOnly()
-                    .compress(1024)
+//                    .compress(1024)
+                    .maxResultSize(800,1200)
                     .start(REQUEST_SAMPING_GALLERY)
             }
 
@@ -104,7 +104,8 @@ class SurveyActivity : AppCompatActivity() {
                 showProgressBar()
                 ImagePicker.with(this@SurveyActivity)
                     .cameraOnly()
-                    .compress(1024)
+//                    .compress(1024)
+                    .maxResultSize(800,1200)
                     .start(REQUEST_DALAM_RUMAH_GALLERY)
             }
 
@@ -164,7 +165,8 @@ class SurveyActivity : AppCompatActivity() {
                     if (location == null) {
                         requestNewLocationData()
                     } else {
-                        binding.koordinat.setText("${location.latitude} - ${location.longitude}")
+                        binding.longitude.setText(location.longitude.toString())
+                        binding.latitude.setText(location.latitude.toString())
 
                     }
                 }
@@ -199,7 +201,8 @@ class SurveyActivity : AppCompatActivity() {
         override fun onLocationResult(locationResult: LocationResult) {
             val mLastLocation: Location? = locationResult.lastLocation
 
-            binding.koordinat.setText("${mLastLocation?.latitude} - ${mLastLocation?.longitude}")
+            binding.longitude.setText(mLastLocation?.longitude.toString())
+            binding.latitude.setText(mLastLocation?.latitude.toString())
 
         }
     }
@@ -265,7 +268,8 @@ class SurveyActivity : AppCompatActivity() {
             val jumlahPenghuni = jumlahPenghuni.text.toString().trim()
             val penghasilan = penghasilanKK.text.toString().trim()
             val luasRumah = luasRumah.text.toString().trim()
-            val koordinat = koordinat.text.toString().trim()
+            val longitude = longitude.text.toString().trim()
+            val latitude = latitude.text.toString().trim()
 
 
             if (nama.isEmpty()) {
@@ -318,7 +322,7 @@ class SurveyActivity : AppCompatActivity() {
                     "Luas Rumah tidak boleh kosong",
                     Toast.LENGTH_SHORT
                 ).show()
-            } else if (koordinat.isEmpty()) {
+            } else if (longitude.isEmpty() || latitude.isEmpty()) {
                 Toast.makeText(
                     this@SurveyActivity,
                     "koordinat tidak boleh kosong",
@@ -413,7 +417,8 @@ class SurveyActivity : AppCompatActivity() {
                     lantai,
                     penutupAtap,
                     statusPenguasaanLahan,
-                    koordinat,
+                    longitude,
+                    latitude,
                     ktpp,
                     samping,
                     dalamRumah,

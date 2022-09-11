@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16sp"
             android:fontFamily="@font/poppins"
-            android:text="Detail Riwayat Survey"
+            android:text="@string/detail_riwayat_survey"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -58,572 +58,25 @@
             app:layout_constraintTop_toBottomOf="@+id/backButton">
 
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/nama"
-                    android:hint="Nama"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textCapWords" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
-
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/nik"
-                    android:hint="NIK"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
-
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/noKK"
-                    android:hint="Nomor KK"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
-
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/alamat"
-                    android:hint="Alamat (Dusun, RT/RW)"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textCapWords" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
-
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/desa"
-                    android:hint="Desa/Kelurahan"
-                    android:enabled="false"
-                    android:textColor="@color/black"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textCapWords" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
-
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/kecamatan"
-                    android:hint="Kecamatan"
-                    android:enabled="false"
-                    android:textColor="@color/black"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textCapWords" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
-
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/jumlahKK"
-                    android:hint="Jumlah KK dalam 1 Rumah"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
-
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/jumlahPenghuni"
-                    android:hint="Jumlah Penghuni Rumah"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
-
-
-                <com.cottacush.android.currencyedittext.CurrencyEditText
-                    android:id="@+id/penghasilanKK"
-                    android:hint="Penghasilan per KK"
-                    android:layout_width="match_parent"
-                    app:useCurrencySymbolAsHint="false"
-                    android:layout_height="wrap_content"
-                    android:inputType="number" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
-
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/luasRumah"
-                    android:hint="Luas Rumah"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="number" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fondasi"
                 android:layout_marginTop="16dp"
-                android:textStyle="bold"
-                android:textSize="16sp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/foto_ktp"
                 android:textColor="@color/black"
-                android:fontFamily="@font/poppins" />
-
-
-            <RadioGroup
-                android:id="@+id/a"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Ada, Kondisi Baik, Kokoh"
-                    android:id="@+id/a1"
-                    android:onClick="fondasi"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Ada, Sebagian Rapuh, Tidak Kokoh"
-                    android:id="@+id/a2"
-                    android:onClick="fondasi"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tidak Ada, Seluruhnya Rapuh"
-                    android:id="@+id/a3"
-                    android:onClick="fondasi"/>
-
-            </RadioGroup>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sloof"
-                android:layout_marginTop="16dp"
-                android:textStyle="bold"
                 android:textSize="16sp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/poppins" />
-
-
-            <RadioGroup
-                android:id="@+id/b"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Ada, kondisi baik, kokoh"
-                    android:id="@+id/b1"
-                    android:onClick="sloof"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Ada, Sebagian Rapuh, Tidak Kokoh"
-                    android:id="@+id/b2"
-                    android:onClick="sloof" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tidak Ada, Seluruhnya Rapuh"
-                    android:id="@+id/b3"
-                    android:onClick="sloof" />
-
-            </RadioGroup>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Kolom"
-                android:layout_marginTop="16dp"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/poppins" />
-
-
-            <RadioGroup
-                android:id="@+id/bb"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Ada, kondisi baik, kokoh"
-                    android:id="@+id/bb1"
-                    android:onClick="kolom"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Ada, Sebagian Rapuh, Tidak Kokoh"
-                    android:id="@+id/bb2"
-                    android:onClick="kolom" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tidak Ada, Seluruhnya Rapuh"
-                    android:id="@+id/bb3"
-                    android:onClick="kolom" />
-
-            </RadioGroup>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ring Balok"
-                android:layout_marginTop="16dp"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/poppins" />
-
-
-            <RadioGroup
-                android:id="@+id/c"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Ada, kondisi baik, kokoh"
-                    android:id="@+id/c1"
-                    android:onClick="ringBalok"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Ada, Sebagian Rapuh, Tidak Kokoh"
-                    android:id="@+id/c2"
-                    android:onClick="ringBalok" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tidak Ada, Seluruhnya Rapuh"
-                    android:id="@+id/c3"
-                    android:onClick="ringBalok"/>
-
-            </RadioGroup>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Kuda-Kuda"
-                android:layout_marginTop="16dp"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/poppins" />
-
-
-            <RadioGroup
-                android:id="@+id/d"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Ada, kondisi baik, kokoh"
-                    android:id="@+id/d1"
-                    android:onClick="kudaKuda"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Ada, Sebagian Rapuh, Tidak Kokoh"
-                    android:id="@+id/d2"
-                    android:onClick="kudaKuda"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tidak Ada, Seluruhnya Rapuh"
-                    android:id="@+id/d3"
-                    android:onClick="kudaKuda" />
-
-            </RadioGroup>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dinding"
-                android:layout_marginTop="16dp"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/poppins" />
-
-
-            <RadioGroup
-                android:id="@+id/e"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tembok/setengah tembok diplester, papan kayu berkualitas, bahan dinding dengan kondisi kokoh dan kedap air"
-                    android:id="@+id/e1"
-                    android:onClick="dinding"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tembok kondisi sebagian besar retak, papan atau bahan lain yang kurang kokoh dan tidak kedap air"
-                    android:id="@+id/e2"
-                    android:onClick="dinding" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Anyaman bambu tipis, triplek, papan, tembok, atau bahan lain yang rapuh dan tidak kedap air"
-                    android:id="@+id/e3"
-                    android:onClick="dinding" />
-
-            </RadioGroup>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Lantai"
-                android:layout_marginTop="16dp"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/poppins" />
-
-
-            <RadioGroup
-                android:id="@+id/ee"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tembok/setengah tembok diplester, papan kayu berkualitas, bahan dinding dengan kondisi kokoh dan kedap air"
-                    android:id="@+id/ee1"
-                    android:onClick="lantai"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Papan atau bahan lain dengan kondisi rusak, plester sebagian besar pecah"
-                    android:id="@+id/ee2"
-                    android:onClick="lantai" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tanah, papan atau bahan lain yang rapuh dan tidak kedap air"
-                    android:id="@+id/ee3"
-                    android:onClick="lantai" />
-
-            </RadioGroup>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Penutup Atap"
-                android:layout_marginTop="16dp"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/poppins" />
-
-
-            <RadioGroup
-                android:id="@+id/f"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Genteng/seng/spandek, bahan tradisional (ijuk/rumbia), atau bahan lain dengan kondisi baik, tidak bocor"
-                    android:id="@+id/f1"
-                    android:onClick="penutupAtap"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Genteng/seng/spandek, bahan tradisional (ijuk/rumbia), atau bahan lain dengan kondisi rusak sebagian, bocor jika terjadi hujan lebat"
-                    android:id="@+id/f2"
-                    android:onClick="penutupAtap"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Asbes, bahan non asbes dengan kondisi rusak berat, sering bocor jika hujan, rawan ambruk"
-                    android:id="@+id/f3"
-                    android:onClick="penutupAtap" />
-
-            </RadioGroup>
-
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Status penguasaan lahan"
-                android:layout_marginTop="16dp"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/poppins" />
-
-
-            <RadioGroup
-                android:id="@+id/g"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="milik sendiri, ada bukti sah"
-                    android:id="@+id/g1"
-                    android:onClick="status"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="sewa/pinjam pakai/izin tinggal/menumpang, ada bukti sah"
-                    android:id="@+id/g2"
-                    android:onClick="status"/>
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="tanpa bukti sah/ilegal"
-                    android:id="@+id/g3"
-                    android:onClick="status"/>
-
-            </RadioGroup>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
-
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/koordinat"
-                    android:hint="Titik Koordinat (Latitude - Longitude)"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Foto KTP"
-                android:layout_marginTop="16dp"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/poppins" />
-
+                android:textStyle="bold" />
 
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="5dp"
                 android:layout_marginStart="3dp"
+                app:cardCornerRadius="5dp"
                 app:cardElevation="5dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
 
@@ -641,8 +94,8 @@
                         android:id="@+id/ktpHint"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:visibility="gone"
                         android:src="@drawable/ic_baseline_add_circle_outline_24"
+                        android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -654,27 +107,25 @@
 
             </androidx.cardview.widget.CardView>
 
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Foto Tampak Samping Depan"
                 android:layout_marginTop="16dp"
-                android:textStyle="bold"
-                android:textSize="16sp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/foto_tampak_samping_depan"
                 android:textColor="@color/black"
-                android:fontFamily="@font/poppins" />
-
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="5dp"
                 android:layout_marginStart="3dp"
+                app:cardCornerRadius="5dp"
                 app:cardElevation="5dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
 
@@ -692,8 +143,8 @@
                         android:id="@+id/fotoTampakSampingHint"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:visibility="gone"
                         android:src="@drawable/ic_baseline_add_circle_outline_24"
+                        android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -705,27 +156,25 @@
 
             </androidx.cardview.widget.CardView>
 
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Foto Dalam Rumah"
                 android:layout_marginTop="16dp"
-                android:textStyle="bold"
-                android:textSize="16sp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/foto_dalam_rumah"
                 android:textColor="@color/black"
-                android:fontFamily="@font/poppins" />
-
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="5dp"
                 android:layout_marginStart="3dp"
+                app:cardCornerRadius="5dp"
                 app:cardElevation="5dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
 
@@ -743,8 +192,8 @@
                         android:id="@+id/fotoDalamRumahHint"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:visibility="gone"
                         android:src="@drawable/ic_baseline_add_circle_outline_24"
+                        android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -756,7 +205,586 @@
 
             </androidx.cardview.widget.CardView>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/biodata"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nama"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/nama"
+                    android:inputType="textCapWords" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nik"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/nik"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/noKK"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/nomor_kk"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/alamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/alamat_dusun_rt_rw"
+                    android:inputType="textCapWords" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/desa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:hint="@string/desa_kelurahan"
+                    android:inputType="textCapWords"
+                    android:textColor="@color/black" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/kecamatan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:hint="@string/kecamatan"
+                    android:inputType="textCapWords"
+                    android:textColor="@color/black" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/jumlahKK"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/jumlah_kk_dalam_1_rumah"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/jumlahPenghuni"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/jumlah_penghuni_rumah"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+
+                <com.cottacush.android.currencyedittext.CurrencyEditText
+                    android:id="@+id/penghasilanKK"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/total_penghasil_per_bulan"
+                    android:inputType="number"
+                    app:useCurrencySymbolAsHint="false" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/luasRumah"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/luas_rumah"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/fondasi"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <RadioGroup
+                android:id="@+id/a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/a1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="fondasi"
+                    android:text="@string/ada_kondisi_baik_kokoh" />
+
+                <RadioButton
+                    android:id="@+id/a2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="fondasi"
+                    android:text="@string/ada_sebagian_rapuh_tidak_kokoh" />
+
+                <RadioButton
+                    android:id="@+id/a3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="fondasi"
+                    android:text="@string/tidak_ada_seluruhnya_rapuh" />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/sloof"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <RadioGroup
+                android:id="@+id/b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/b1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="sloof"
+                    android:text="@string/ada_kondisi_baik_kokoh" />
+
+                <RadioButton
+                    android:id="@+id/b2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="sloof"
+                    android:text="@string/ada_sebagian_rapuh_tidak_kokoh" />
+
+                <RadioButton
+                    android:id="@+id/b3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="sloof"
+                    android:text="@string/tidak_ada_seluruhnya_rapuh" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/kolom"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <RadioGroup
+                android:id="@+id/bb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/bb1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="kolom"
+                    android:text="@string/ada_kondisi_baik_kokoh" />
+
+                <RadioButton
+                    android:id="@+id/bb2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="kolom"
+                    android:text="@string/ada_sebagian_rapuh_tidak_kokoh" />
+
+                <RadioButton
+                    android:id="@+id/bb3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="kolom"
+                    android:text="@string/tidak_ada_seluruhnya_rapuh" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/ring_balok"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <RadioGroup
+                android:id="@+id/c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/c1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="ringBalok"
+                    android:text="@string/ada_kondisi_baik_kokoh" />
+
+                <RadioButton
+                    android:id="@+id/c2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="ringBalok"
+                    android:text="@string/ada_sebagian_rapuh_tidak_kokoh" />
+
+                <RadioButton
+                    android:id="@+id/c3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="ringBalok"
+                    android:text="@string/tidak_ada_seluruhnya_rapuh" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/kuda_kuda"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <RadioGroup
+                android:id="@+id/d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/d1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="kudaKuda"
+                    android:text="@string/ada_kondisi_baik_kokoh" />
+
+                <RadioButton
+                    android:id="@+id/d2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="kudaKuda"
+                    android:text="@string/ada_sebagian_rapuh_tidak_kokoh" />
+
+                <RadioButton
+                    android:id="@+id/d3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="kudaKuda"
+                    android:text="@string/tidak_ada_seluruhnya_rapuh" />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/dinding"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <RadioGroup
+                android:id="@+id/e"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/e1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="dinding"
+                    android:text="@string/dinding_a" />
+
+                <RadioButton
+                    android:id="@+id/e2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="dinding"
+                    android:text="@string/dinding_b" />
+
+                <RadioButton
+                    android:id="@+id/e3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="dinding"
+                    android:text="@string/dinding_c" />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/lantai"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <RadioGroup
+                android:id="@+id/ee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/ee1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="lantai"
+                    android:text="@string/lantai_a" />
+
+                <RadioButton
+                    android:id="@+id/ee2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="lantai"
+                    android:text="@string/lantai_b" />
+
+                <RadioButton
+                    android:id="@+id/ee3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="lantai"
+                    android:text="@string/lantai_c" />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/penutup_atap"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <RadioGroup
+                android:id="@+id/f"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/f1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="penutupAtap"
+                    android:text="@string/atap_a" />
+
+                <RadioButton
+                    android:id="@+id/f2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="penutupAtap"
+                    android:text="@string/atap_b" />
+
+                <RadioButton
+                    android:id="@+id/f3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="penutupAtap"
+                    android:text="@string/atap_c" />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/status_penguasaan_lahan"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <RadioGroup
+                android:id="@+id/g"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/g1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="status"
+                    android:text="@string/milik_a" />
+
+                <RadioButton
+                    android:id="@+id/g2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="status"
+                    android:text="@string/milik_b" />
+
+                <RadioButton
+                    android:id="@+id/g3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="status"
+                    android:text="@string/milik_c" />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins"
+                android:text="@string/titik_koordinat_latitude_longitude"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/longitude"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/longitude"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/latitude"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/latitude"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <ProgressBar
                 android:layout_width="wrap_content"
@@ -776,7 +804,7 @@
                 android:backgroundTint="@color/green"
                 android:id="@+id/save"
                 android:fontFamily="@font/poppins"
-                android:text="Perbarui Data Survey"
+                android:text="@string/perbarui_data_survey"
                 android:layout_marginStart="16sp"
                 android:layout_marginEnd="16dp"
                 android:textColor="@color/white"
