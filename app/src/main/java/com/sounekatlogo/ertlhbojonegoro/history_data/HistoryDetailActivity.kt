@@ -2,7 +2,6 @@ package com.sounekatlogo.ertlhbojonegoro.history_data
 
 import android.app.ProgressDialog
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -14,7 +13,6 @@ import com.bumptech.glide.Glide
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.firebase.firestore.FirebaseFirestore
 import com.sounekatlogo.ertlhbojonegoro.HomeActivity
-import com.sounekatlogo.ertlhbojonegoro.LoginActivity
 import com.sounekatlogo.ertlhbojonegoro.R
 import com.sounekatlogo.ertlhbojonegoro.databinding.ActivityHistoryDetailBinding
 import com.sounekatlogo.ertlhbojonegoro.survey.SurveyModel
@@ -77,7 +75,8 @@ class HistoryDetailActivity : AppCompatActivity() {
             jumlahPenghuni.setText(model?.jumlahKK1)
             penghasilanKK.setText(model?.penghasilan1)
             luasRumah.setText(model?.luasRumah1)
-            koordinat.setText(model?.koordinat1)
+            longitude.setText(model?.longitude1)
+            latitude.setText(model?.latitude1)
             fondasi = model?.pondasi1.toString()
             sloof = model?.sloof1.toString()
             kolom = model?.kolom1.toString()
@@ -352,7 +351,8 @@ class HistoryDetailActivity : AppCompatActivity() {
             val jumlahPenghuni = jumlahPenghuni.text.toString().trim()
             val penghasilan = penghasilanKK.text.toString().trim()
             val luasRumah = luasRumah.text.toString().trim()
-            val koordinat = koordinat.text.toString().trim()
+            val longitude = longitude.text.toString().trim()
+            val latitude = latitude.text.toString().trim()
 
             if(nama.isEmpty()) {
                 Toast.makeText(this@HistoryDetailActivity, "Nama tidak boleh kosong", Toast.LENGTH_SHORT).show()
@@ -381,7 +381,7 @@ class HistoryDetailActivity : AppCompatActivity() {
                 Toast.makeText(this@HistoryDetailActivity, "Penghasilan per KK tidak boleh kosong", Toast.LENGTH_SHORT).show()
             }else if (luasRumah.isEmpty()) {
                 Toast.makeText(this@HistoryDetailActivity, "Luas Rumah tidak boleh kosong", Toast.LENGTH_SHORT).show()
-            }else if (koordinat.isEmpty()) {
+            }else if (longitude.isEmpty() || latitude.isEmpty()) {
                 Toast.makeText(this@HistoryDetailActivity, "koordinat tidak boleh kosong", Toast.LENGTH_SHORT).show()
             }else if (ktpp == "") {
                 Toast.makeText(this@HistoryDetailActivity, "KTP tidak boleh kosong", Toast.LENGTH_SHORT).show()
@@ -437,7 +437,8 @@ class HistoryDetailActivity : AppCompatActivity() {
                     lantai,
                     penutupAtap,
                     statusPenguasaanLahan,
-                    koordinat,
+                    longitude,
+                    latitude,
                     ktpp,
                     samping,
                     dalamRumah,
@@ -705,7 +706,8 @@ class HistoryDetailActivity : AppCompatActivity() {
                     jumlahPenghuni.setText("")
                     penghasilanKK.setText("")
                     luasRumah.setText("")
-                    koordinat.setText("")
+                    longitude.setText("")
+                    latitude.setText("")
                     ktpp = ""
                     samping = ""
                     dalamRumah = ""

@@ -1,8 +1,10 @@
 package com.sounekatlogo.ertlhbojonegoro.history_data
 
 import android.content.Context
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,6 +16,7 @@ class HistoryServerActivity : AppCompatActivity() {
     private val binding get() = _binding!!
     private var adapter: HistoryAdapter? = null
     private var role = ""
+    private var uid = ""
 
     override fun onResume() {
         super.onResume()
@@ -25,8 +28,11 @@ class HistoryServerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityHistoryServerBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val prefs = getSharedPreferences("USER_DATA", Context.MODE_PRIVATE)
 
-        role = intent.getStringExtra(ROLE).toString()
+        uid = prefs.getString("uid", "").toString()
+        role = prefs.getString("role", "").toString()
+
         if(role == "user") {
             binding.textView8.text = "Riwayat Survey di Server"
         } else {
@@ -50,8 +56,6 @@ class HistoryServerActivity : AppCompatActivity() {
         binding.progressBar.visibility = View.VISIBLE
         when (role) {
             "user" -> {
-                val prefs = getSharedPreferences("USER_DATA", Context.MODE_PRIVATE)
-                val uid = prefs.getString("uid", "").toString()
                 viewModel.setHistoryByUid(uid)
             }
             "admin" -> {
@@ -74,7 +78,4 @@ class HistoryServerActivity : AppCompatActivity() {
         _binding = null
     }
 
-    companion object {
-        const val ROLE = "role"
-    }
 }

@@ -35,7 +35,8 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
                 lantai + " TEXT," +
                 penutupAtap + " TEXT," +
                 statusPenguasaanLahan + " TEXT," +
-                koordinat + " TEXT," +
+                longitude + " TEXT," +
+                latitude + " TEXT," +
                 ktp + " TEXT," +
                 samping + " TEXT," +
                 dalamRumah + " TEXT," +
@@ -76,7 +77,8 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         lantai1: String,
         penutupAtap1: String,
         statusPenguasaanLahan1: String,
-        koordinat1: String,
+        longitude1: String,
+        latitude1: String,
         ktp1: String,
         samping1: String,
         dalamRumah1: String,
@@ -111,7 +113,8 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         values.put(lantai, lantai1)
         values.put(penutupAtap, penutupAtap1)
         values.put(statusPenguasaanLahan, statusPenguasaanLahan1)
-        values.put(koordinat, koordinat1)
+        values.put(longitude, longitude1)
+        values.put(latitude, latitude1)
         values.put(ktp, ktp1)
         values.put(samping, samping1)
         values.put(dalamRumah, dalamRumah1)
@@ -170,7 +173,8 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         lantai1: String,
         penutupAtap1: String,
         statusPenguasaanLahan1: String,
-        koordinat1: String,
+        longitude1: String,
+        latitude1: String,
         ktp1: String,
         samping1: String,
         dalamRumah1: String,
@@ -207,7 +211,8 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         values.put(lantai, lantai1)
         values.put(penutupAtap, penutupAtap1)
         values.put(statusPenguasaanLahan, statusPenguasaanLahan1)
-        values.put(koordinat, koordinat1)
+        values.put(longitude, longitude1)
+        values.put(latitude, latitude1)
         values.put(ktp, ktp1)
         values.put(samping, samping1)
         values.put(dalamRumah, dalamRumah1)
@@ -272,7 +277,8 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         val lantai = "lantai"
         val penutupAtap = "penutupAtap"
         val statusPenguasaanLahan = "statusPenguasaanLahan"
-        val koordinat = "koordinat"
+        val longitude = "longitude"
+        val latitude = "latitude"
         val ktp = "ktp"
         val samping = "samping"
         val dalamRumah = "dalamRumah"

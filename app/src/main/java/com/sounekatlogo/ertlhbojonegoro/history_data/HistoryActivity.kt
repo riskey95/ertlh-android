@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sounekatlogo.ertlhbojonegoro.databinding.ActivityHistoryBinding
 import com.sounekatlogo.ertlhbojonegoro.survey.SurveyModel
-import com.sounekatlogo.ertlhbojonegoro.utils.Common
+//import com.sounekatlogo.ertlhbojonegoro.utils.Common
 import com.sounekatlogo.ertlhbojonegoro.utils.DBHelper
 
 class HistoryActivity : AppCompatActivity() {
@@ -19,6 +19,7 @@ class HistoryActivity : AppCompatActivity() {
     private val binding get() = _binding!!
     private var adapter : HistoryAdapter? = null
     private var surveyList = ArrayList<SurveyModel>()
+    private var role = ""
 
     override fun onResume() {
         super.onResume()
@@ -30,6 +31,8 @@ class HistoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityHistoryBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val prefs = getSharedPreferences("USER_DATA", Context.MODE_PRIVATE)
+        role = prefs.getString("role", "").toString()
 
         binding.backButton.setOnClickListener {
             onBackPressed()
@@ -43,7 +46,7 @@ class HistoryActivity : AppCompatActivity() {
     }
 
     private fun showOptionMenu() {
-        if(intent.getStringExtra(UID) != Common.uid) {
+        if(role != "admin") {
             val options = arrayOf("Lihat Riwayat Yang Ada di Server")
 
             val builder = AlertDialog.Builder(this)
@@ -52,7 +55,7 @@ class HistoryActivity : AppCompatActivity() {
                 if (which == 0) {
                     dialog.dismiss()
                     val intent = Intent(this, HistoryServerActivity::class.java)
-                    intent.putExtra(HistoryServerActivity.ROLE, "user")
+//                    intent.putExtra(HistoryServerActivity.ROLE, "user")
                     startActivity(intent)
                 }
             }
@@ -66,7 +69,7 @@ class HistoryActivity : AppCompatActivity() {
                 if (which == 0) {
                     dialog.dismiss()
                     val intent = Intent(this, HistoryServerActivity::class.java)
-                    intent.putExtra(HistoryServerActivity.ROLE, "admin")
+//                    intent.putExtra(HistoryServerActivity.ROLE, "admin")
                     startActivity(intent)
                 }
             }
@@ -108,7 +111,8 @@ class HistoryActivity : AppCompatActivity() {
                 val lantai = cursor.getString(cursor.getColumnIndex(DBHelper.lantai))
                 val penutup = cursor.getString(cursor.getColumnIndex(DBHelper.penutupAtap))
                 val statusPenguasaanLahan = cursor.getString(cursor.getColumnIndex(DBHelper.statusPenguasaanLahan))
-                val koordinat = cursor.getString(cursor.getColumnIndex(DBHelper.koordinat))
+                val longitude = cursor.getString(cursor.getColumnIndex(DBHelper.longitude))
+                val latitude = cursor.getString(cursor.getColumnIndex(DBHelper.latitude))
                 val ktp = cursor.getString(cursor.getColumnIndex(DBHelper.ktp))
                 val samping = cursor.getString(cursor.getColumnIndex(DBHelper.samping))
                 val dalam = cursor.getString(cursor.getColumnIndex(DBHelper.dalamRumah))
@@ -139,7 +143,8 @@ class HistoryActivity : AppCompatActivity() {
                         lantai1 = lantai,
                         penutupAtap1 = penutup,
                         statusPenguasaanLahan1 = statusPenguasaanLahan,
-                        koordinat1 = koordinat,
+                        longitude1 = longitude,
+                        latitude1 = latitude,
                         ktp1 = ktp,
                         samping1 = samping,
                         dalamRumah1 = dalam,
@@ -172,7 +177,7 @@ class HistoryActivity : AppCompatActivity() {
                     val lantai = cursor.getString(cursor.getColumnIndex(DBHelper.lantai))
                     val penutup = cursor.getString(cursor.getColumnIndex(DBHelper.penutupAtap))
                     val statusPenguasaanLahan = cursor.getString(cursor.getColumnIndex(DBHelper.statusPenguasaanLahan))
-                    val koordinat = cursor.getString(cursor.getColumnIndex(DBHelper.koordinat))
+                    val longitude = cursor.getString(cursor.getColumnIndex(DBHelper.longitude))
                     val ktp = cursor.getString(cursor.getColumnIndex(DBHelper.ktp))
                     val samping = cursor.getString(cursor.getColumnIndex(DBHelper.samping))
                     val dalam = cursor.getString(cursor.getColumnIndex(DBHelper.dalamRumah))
@@ -203,7 +208,8 @@ class HistoryActivity : AppCompatActivity() {
                             lantai1 = lantai,
                             penutupAtap1 = penutup,
                             statusPenguasaanLahan1 = statusPenguasaanLahan,
-                            koordinat1 = koordinat,
+                            longitude1 = longitude,
+                            latitude1 = latitude,
                             ktp1 = ktp,
                             samping1 = samping,
                             dalamRumah1 = dalam,
@@ -241,7 +247,4 @@ class HistoryActivity : AppCompatActivity() {
         _binding = null
     }
 
-    companion object {
-        const val UID = "uid"
-    }
 }
