@@ -133,21 +133,22 @@ class HomeActivity : AppCompatActivity() {
                                                     "jumlahPenghuni" to finalSurveyList[i].jumlahPenghuni1,
                                                     "penghasilanKK" to finalSurveyList[i].penghasilan1,
                                                     "luasRumah" to finalSurveyList[i].luasRumah1,
-                                                    "fondasi" to finalSurveyList[i].pondasi1,
-                                                    "sloof" to finalSurveyList[i].sloof1,
-                                                    "kolom" to finalSurveyList[i].kolom1,
-                                                    "ringBalok" to finalSurveyList[i].ringBalok1,
-                                                    "kudaKuda" to finalSurveyList[i].kudaKuda1,
-                                                    "dinding" to finalSurveyList[i].dinding1,
-                                                    "lantai" to finalSurveyList[i].lantai1,
-                                                    "penutupAtap" to finalSurveyList[i].penutupAtap1,
+                                                    "struktur_fondasi" to finalSurveyList[i].pondasi1,
+                                                    "struktur_sloof" to finalSurveyList[i].sloof1,
+                                                    "struktur_kolom" to finalSurveyList[i].kolom1,
+                                                    "struktur_ringBalok" to finalSurveyList[i].ringBalok1,
+                                                    "struktur_kudaKuda" to finalSurveyList[i].kudaKuda1,
+                                                    "nonstruktur_dinding" to finalSurveyList[i].dinding1,
+                                                    "nonstruktur_lantai" to finalSurveyList[i].lantai1,
+                                                    "nonstruktur_penutupAtap" to finalSurveyList[i].penutupAtap1,
                                                     "statusPenguasaanLahan" to finalSurveyList[i].statusPenguasaanLahan1,
                                                     "longitude" to finalSurveyList[i].longitude1,
                                                     "latitude" to finalSurveyList[i].latitude1,
-                                                    "ktp" to ktp,
-                                                    "samping" to dalam,
-                                                    "dalamRumah" to samping,
+                                                    "foto_ktp" to ktp,
+                                                    "foto_samping" to samping,
+                                                    "foto_dalamRumah" to dalam,
                                                     "status" to "Sudah Diupload",
+                                                    "nilai" to finalSurveyList[i].nilai1,
                                                     "date" to finalSurveyList[i].date1
                                                 )
 
@@ -264,6 +265,7 @@ class HomeActivity : AppCompatActivity() {
                 val samping = cursor.getString(cursor.getColumnIndex(DBHelper.samping))
                 val dalam = cursor.getString(cursor.getColumnIndex(DBHelper.dalamRumah))
                 val status = cursor.getString(cursor.getColumnIndex(DBHelper.status))
+                val nilai = cursor.getString(cursor.getColumnIndex(DBHelper.nilai))
                 val date = cursor.getString(cursor.getColumnIndex(DBHelper.date))
                 val serverUid = cursor.getString(cursor.getColumnIndex(DBHelper.serverUid))
 
@@ -296,6 +298,7 @@ class HomeActivity : AppCompatActivity() {
                         samping1 = samping,
                         dalamRumah1 = dalam,
                         status1 = status,
+                        nilai1 = nilai,
                         serverUid1 = serverUid,
                         date1 = date,
                     )
@@ -330,6 +333,7 @@ class HomeActivity : AppCompatActivity() {
                     val samping = cursor.getString(cursor.getColumnIndex(DBHelper.samping))
                     val dalam = cursor.getString(cursor.getColumnIndex(DBHelper.dalamRumah))
                     val status = cursor.getString(cursor.getColumnIndex(DBHelper.status))
+                    val nilai = cursor.getString(cursor.getColumnIndex(DBHelper.nilai))
                     val date = cursor.getString(cursor.getColumnIndex(DBHelper.date))
                     val serverUid = cursor.getString(cursor.getColumnIndex(DBHelper.serverUid))
 
@@ -362,6 +366,7 @@ class HomeActivity : AppCompatActivity() {
                             samping1 = samping,
                             dalamRumah1 = dalam,
                             status1 = status,
+                            nilai1 = nilai,
                             serverUid1 = serverUid,
                             date1 = date,
                         )

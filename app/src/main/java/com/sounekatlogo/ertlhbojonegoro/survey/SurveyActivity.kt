@@ -270,6 +270,18 @@ class SurveyActivity : AppCompatActivity() {
             val luasRumah = luasRumah.text.toString().trim()
             val longitude = longitude.text.toString().trim()
             val latitude = latitude.text.toString().trim()
+            val struktur = listOf(fondasi, sloof, kolom, ringBalok, kudaKuda)
+            val nonStuktur = listOf(dinding, lantai, penutupAtap)
+            var nilai =""
+
+            if (statusPenguasaanLahan == "C"){
+                nilai = "Tidak Memenuhi Syarat"
+            } else if (struktur.count { it == "B" } >= 2 || struktur.count { it == "C" } >= 1 ||
+                nonStuktur.count { it == "B" } >= 2 || nonStuktur.count { it == "C" } >= 1) {
+                nilai = "Rumah Tidak Layak Huni (RTLH)"
+            } else {
+                nilai = "Rumah Layak Huni (RLH)"
+            }
 
 
             if (nama.isEmpty()) {
@@ -423,6 +435,7 @@ class SurveyActivity : AppCompatActivity() {
                     samping,
                     dalamRumah,
                     "Belum Diupload",
+                    nilai,
                     serverUid,
                     formattedDate
                 )
@@ -474,16 +487,16 @@ class SurveyActivity : AppCompatActivity() {
                 when (view.getId()) {
                     R.id.a1 ->
                         if (checked) {
-                            fondasi = "0"
+                            fondasi = "A"
                         }
                     R.id.a2 ->
                         if (checked) {
-                            fondasi = "1"
+                            fondasi = "B"
                         }
 
                     R.id.a3 ->
                         if (checked) {
-                            fondasi = "2"
+                            fondasi = "C"
                         }
                 }
             }
@@ -497,16 +510,16 @@ class SurveyActivity : AppCompatActivity() {
                 when (view.getId()) {
                     R.id.b1 ->
                         if (checked) {
-                            sloof = "0"
+                            sloof = "A"
                         }
                     R.id.b2 ->
                         if (checked) {
-                            sloof = "1"
+                            sloof = "B"
                         }
 
                     R.id.b3 ->
                         if (checked) {
-                            sloof = "2"
+                            sloof = "C"
                         }
                 }
             }
@@ -520,16 +533,16 @@ class SurveyActivity : AppCompatActivity() {
                 when (view.getId()) {
                     R.id.bb1 ->
                         if (checked) {
-                            kolom = "0"
+                            kolom = "A"
                         }
                     R.id.bb2 ->
                         if (checked) {
-                            kolom = "1"
+                            kolom = "B"
                         }
 
                     R.id.bb3 ->
                         if (checked) {
-                            kolom = "2"
+                            kolom = "C"
                         }
                 }
             }
@@ -543,16 +556,16 @@ class SurveyActivity : AppCompatActivity() {
                 when (view.getId()) {
                     R.id.c1 ->
                         if (checked) {
-                            ringBalok = "0"
+                            ringBalok = "A"
                         }
                     R.id.c2 ->
                         if (checked) {
-                            ringBalok = "1"
+                            ringBalok = "B"
                         }
 
                     R.id.c3 ->
                         if (checked) {
-                            ringBalok = "2"
+                            ringBalok = "C"
                         }
                 }
             }
@@ -566,16 +579,16 @@ class SurveyActivity : AppCompatActivity() {
                 when (view.getId()) {
                     R.id.d1 ->
                         if (checked) {
-                            kudaKuda = "0"
+                            kudaKuda = "A"
                         }
                     R.id.d2 ->
                         if (checked) {
-                            kudaKuda = "1"
+                            kudaKuda = "B"
                         }
 
                     R.id.d3 ->
                         if (checked) {
-                            kudaKuda = "2"
+                            kudaKuda = "C"
                         }
                 }
             }
@@ -589,16 +602,16 @@ class SurveyActivity : AppCompatActivity() {
                 when (view.getId()) {
                     R.id.e1 ->
                         if (checked) {
-                            dinding = "0"
+                            dinding = "A"
                         }
                     R.id.e2 ->
                         if (checked) {
-                            dinding = "1"
+                            dinding = "B"
                         }
 
                     R.id.e3 ->
                         if (checked) {
-                            dinding = "2"
+                            dinding = "C"
                         }
                 }
             }
@@ -612,16 +625,16 @@ class SurveyActivity : AppCompatActivity() {
                 when (view.getId()) {
                     R.id.ee1 ->
                         if (checked) {
-                            lantai = "0"
+                            lantai = "A"
                         }
                     R.id.ee2 ->
                         if (checked) {
-                            lantai = "1"
+                            lantai = "B"
                         }
 
                     R.id.ee3 ->
                         if (checked) {
-                            lantai = "2"
+                            lantai = "C"
                         }
                 }
             }
@@ -635,16 +648,16 @@ class SurveyActivity : AppCompatActivity() {
                 when (view.getId()) {
                     R.id.f1 ->
                         if (checked) {
-                            penutupAtap = "0"
+                            penutupAtap = "A"
                         }
                     R.id.f2 ->
                         if (checked) {
-                            penutupAtap = "1"
+                            penutupAtap = "B"
                         }
 
                     R.id.f3 ->
                         if (checked) {
-                            penutupAtap = "2"
+                            penutupAtap = "C"
                         }
                 }
             }
@@ -658,16 +671,16 @@ class SurveyActivity : AppCompatActivity() {
                 when (view.getId()) {
                     R.id.g1 ->
                         if (checked) {
-                            statusPenguasaanLahan = "0"
+                            statusPenguasaanLahan = "A"
                         }
                     R.id.g2 ->
                         if (checked) {
-                            statusPenguasaanLahan = "1"
+                            statusPenguasaanLahan = "B"
                         }
 
                     R.id.g3 ->
                         if (checked) {
-                            statusPenguasaanLahan = "2"
+                            statusPenguasaanLahan = "C"
                         }
                 }
             }
