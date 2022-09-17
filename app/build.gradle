@@ -10,7 +10,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.sounekatlogo.ertlhbojonegoro"
+        applicationId "com.latsar.ertlhbojonegoro"
         minSdk 23
         targetSdk 32
         versionCode 1

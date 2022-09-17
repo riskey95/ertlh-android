@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.sounekatlogo.ertlhbojonegoro">
+    package="com.latsar.ertlhbojonegoro">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -24,31 +24,31 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".history_data.PhotoActivity"
+            android:name="com.latsar.ertlhbojonegoro.history_data.PhotoActivity"
             android:exported="false" />
         <activity
-            android:name=".history_data.HistoryServerActivity"
+            android:name="com.latsar.ertlhbojonegoro.history_data.HistoryServerActivity"
             android:exported="false" />
         <activity
-            android:name=".history_data.HistoryDetailActivity"
+            android:name="com.latsar.ertlhbojonegoro.history_data.HistoryDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".history_data.HistoryActivity"
+            android:name="com.latsar.ertlhbojonegoro.history_data.HistoryActivity"
             android:exported="false" />
         <activity
-            android:name=".survey.SurveyActivity"
+            android:name="com.latsar.ertlhbojonegoro.survey.SurveyActivity"
             android:exported="false" />
         <activity
-            android:name=".register.RegisterUserActivity"
+            android:name="com.latsar.ertlhbojonegoro.register.RegisterUserActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name="com.latsar.ertlhbojonegoro.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name="com.latsar.ertlhbojonegoro.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.latsar.ertlhbojonegoro.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
