@@ -2,6 +2,7 @@ package com.sounekatlogo.ertlhbojonegoro.history_data
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -44,6 +45,10 @@ class HistoryAdapter : RecyclerView.Adapter<HistoryAdapter.ViewHolder>() {
                 when (model.status1) {
                     "Belum Diupload" -> {
                         status.setTextColor(ContextCompat.getColor(itemView.context, android.R.color.holo_red_dark))
+                    }
+                    "Ditolak" -> {
+                        status.setTextColor(ContextCompat.getColor(itemView.context, android.R.color.holo_red_dark))
+                        nik.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.pig_pink))
                     }
                     else -> {
                         status.setTextColor(ContextCompat.getColor(itemView.context, R.color.green))

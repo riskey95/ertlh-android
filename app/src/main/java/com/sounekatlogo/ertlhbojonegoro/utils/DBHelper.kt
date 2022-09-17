@@ -41,6 +41,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
                 samping + " TEXT," +
                 dalamRumah + " TEXT," +
                 status + " TEXT," +
+                nilai + " TEXT," +
                 serverUid + " TEXT," +
                 date + " TEXT" + ")")
 
@@ -83,6 +84,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         samping1: String,
         dalamRumah1: String,
         status1: String,
+        nilai1: String,
         serverUid1: String,
         date1: String,
     ) {
@@ -119,6 +121,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         values.put(samping, samping1)
         values.put(dalamRumah, dalamRumah1)
         values.put(status, status1)
+        values.put(nilai, nilai1)
         values.put(serverUid, serverUid1)
         values.put(date, date1)
 
@@ -179,6 +182,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         samping1: String,
         dalamRumah1: String,
         status1: String,
+        nilai1: String,
         serverUid1: String,
         date1: String,
     ) {
@@ -217,6 +221,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         values.put(samping, samping1)
         values.put(dalamRumah, dalamRumah1)
         values.put(status, status1)
+        values.put(nilai, nilai1)
         values.put(serverUid, serverUid1)
         values.put(date, date1)
 
@@ -283,6 +288,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         val samping = "samping"
         val dalamRumah = "dalamRumah"
         val status = "status"
+        val nilai = "nilai"
         val date = "date"
         val serverUid = "serverUid"
     }

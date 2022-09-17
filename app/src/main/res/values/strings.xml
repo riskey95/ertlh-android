@@ -36,7 +36,7 @@
     <string name="dinding_a">Tembok/setengah tembok diplester, papan kayu berkualitas, bahan dinding dengan kondisi kokoh dan kedap air</string>
     <string name="dinding_b">Tembok kondisi sebagian besar retak, papan atau bahan lain yang kurang kokoh dan tidak kedap air</string>
     <string name="dinding_c">Anyaman bambu tipis, triplek, papan, tembok, atau bahan lain yang rapuh dan tidak kedap air</string>
-    <string name="lantai_a">Tembok/setengah tembok diplester, papan kayu berkualitas, bahan dinding dengan kondisi kokoh dan kedap air</string>
+    <string name="lantai_a">Plaster/Ubin/Keramik/Papan atau bahan lain dalam kondisi baik dan kedap air</string>
     <string name="lantai_b">Papan atau bahan lain dengan kondisi rusak, plester sebagian besar pecah</string>
     <string name="lantai_c">Tanah, papan atau bahan lain yang rapuh dan tidak kedap air</string>
     <string name="atap_a">Genteng/seng/spandek, bahan tradisional (ijuk/rumbia), atau bahan lain dengan kondisi baik, tidak bocor</string>
@@ -54,4 +54,7 @@
     <string name="tambah">Tambah</string>
     <string name="sync_data">Sync Data</string>
     <string name="riwayat">Riwayat</string>
+    <string name="usulan_belum_terverifikasi">Usulan Belum Terverifikasi</string>
+    <string name="tidak_ada_riwayat_survey">Tidak Ada Riwayat Survey</string>
+    <string name="riwayat_survey">Riwayat Survey</string>
 </resources>

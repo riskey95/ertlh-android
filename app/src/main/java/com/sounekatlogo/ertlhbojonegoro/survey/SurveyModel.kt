@@ -33,5 +33,6 @@ data class SurveyModel(
     var samping1: String,
     var dalamRumah1: String,
     var status1: String,
+    var nilai1: String,
     var date1: String,
 ) : Parcelable

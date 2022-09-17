@@ -27,7 +27,8 @@
         android:src="@drawable/ic_baseline_menu_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/green" />
+        app:tint="@color/green"
+        tools:visibility="gone" />
 
 
     <TextView
@@ -36,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16sp"
         android:fontFamily="@font/poppins"
-        android:text="Riwayat Survey"
+        android:text="@string/riwayat_survey"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -61,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"
-        android:text="Tidak Ada Riwayat Survey"
+        android:text="@string/tidak_ada_riwayat_survey"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:visibility="gone"

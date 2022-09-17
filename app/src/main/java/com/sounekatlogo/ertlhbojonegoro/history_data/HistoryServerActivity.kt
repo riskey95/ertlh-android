@@ -34,9 +34,9 @@ class HistoryServerActivity : AppCompatActivity() {
         role = prefs.getString("role", "").toString()
 
         if(role == "user") {
-            binding.textView8.text = "Riwayat Survey di Server"
+            binding.textView8.text = "Status Usulan Terverifikasi"
         } else {
-            binding.textView8.text = "Riwayat Seluruh Survey di Server"
+            binding.textView8.text = "Status Seluruh Usulan Terverifikasi"
         }
 
         binding.backButton.setOnClickListener {
