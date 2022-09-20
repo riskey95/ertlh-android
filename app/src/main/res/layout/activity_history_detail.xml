@@ -764,6 +764,7 @@
                     android:id="@+id/longitude"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:enabled="false"
                     android:hint="@string/longitude"
                     android:inputType="text" />
 
@@ -781,6 +782,7 @@
                     android:id="@+id/latitude"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:enabled="false"
                     android:hint="@string/latitude"
                     android:inputType="text" />
 
