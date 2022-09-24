@@ -113,7 +113,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16sp"
-            android:text="E-RTLH Bonjonegoro"
+            android:text="@string/app_name"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="18sp"

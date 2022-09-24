@@ -117,6 +117,7 @@ class HistoryActivity : AppCompatActivity() {
                 val samping = cursor.getString(cursor.getColumnIndex(DBHelper.samping))
                 val dalam = cursor.getString(cursor.getColumnIndex(DBHelper.dalamRumah))
                 val status = cursor.getString(cursor.getColumnIndex(DBHelper.status))
+                val nilai = cursor.getString(cursor.getColumnIndex(DBHelper.nilai))
                 val date = cursor.getString(cursor.getColumnIndex(DBHelper.date))
                 val serverUid = cursor.getString(cursor.getColumnIndex(DBHelper.serverUid))
 
@@ -149,6 +150,7 @@ class HistoryActivity : AppCompatActivity() {
                         samping1 = samping,
                         dalamRumah1 = dalam,
                         status1 = status,
+                        nilai1 = nilai,
                         serverUid1 = serverUid,
                         date1 = date,
                     )
@@ -182,6 +184,7 @@ class HistoryActivity : AppCompatActivity() {
                     val samping = cursor.getString(cursor.getColumnIndex(DBHelper.samping))
                     val dalam = cursor.getString(cursor.getColumnIndex(DBHelper.dalamRumah))
                     val status = cursor.getString(cursor.getColumnIndex(DBHelper.status))
+                    val nilai = cursor.getString(cursor.getColumnIndex(DBHelper.nilai))
                     val date = cursor.getString(cursor.getColumnIndex(DBHelper.date))
                     val serverUid = cursor.getString(cursor.getColumnIndex(DBHelper.serverUid))
 
@@ -214,6 +217,7 @@ class HistoryActivity : AppCompatActivity() {
                             samping1 = samping,
                             dalamRumah1 = dalam,
                             status1 = status,
+                            nilai1 = nilai,
                             serverUid1 = serverUid,
                             date1 = date,
                         )
