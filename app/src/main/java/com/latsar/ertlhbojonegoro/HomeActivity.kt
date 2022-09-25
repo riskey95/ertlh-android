@@ -98,7 +98,7 @@ class HomeActivity : AppCompatActivity() {
                     var samping = ""
                     var dalam = ""
 
-                    val options = arrayOf("ktp", "tampak_samping_rumah", "tampak_dalam_rumah")
+                    val options = arrayOf("tampak_depan_rumah", "tampak_samping_rumah", "tampak_dalam_rumah")
                     val images = arrayOf(finalSurveyList[i].ktp1, finalSurveyList[i].samping1, finalSurveyList[i].dalamRumah1)
                     for (j in 0 until 3) {
                         val imageFileName =
@@ -144,7 +144,7 @@ class HomeActivity : AppCompatActivity() {
                                                     "statusPenguasaanLahan" to finalSurveyList[i].statusPenguasaanLahan1,
                                                     "longitude" to finalSurveyList[i].longitude1,
                                                     "latitude" to finalSurveyList[i].latitude1,
-                                                    "foto_ktp" to ktp,
+                                                    "foto_depan" to ktp,
                                                     "foto_samping" to samping,
                                                     "foto_dalamRumah" to dalam,
                                                     "status" to "Sudah Diupload",

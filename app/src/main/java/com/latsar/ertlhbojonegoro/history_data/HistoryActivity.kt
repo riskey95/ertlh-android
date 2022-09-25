@@ -88,77 +88,8 @@ class HistoryActivity : AppCompatActivity() {
         val cursor = db.getAllSurvey(myUid)
 
         if(cursor != null) {
-            if(cursor.count > 0) {
-                cursor.moveToFirst()
-
-                val id = cursor.getString(cursor.getColumnIndex(DBHelper.ID_COL))
-                val uid = cursor.getString(cursor.getColumnIndex(DBHelper.uid))
-                val nama = cursor.getString(cursor.getColumnIndex(DBHelper.nama))
-                val nik = cursor.getString(cursor.getColumnIndex(DBHelper.nik))
-                val nokk = cursor.getString(cursor.getColumnIndex(DBHelper.noKK))
-                val alamat = cursor.getString(cursor.getColumnIndex(DBHelper.alamat))
-                val desa = cursor.getString(cursor.getColumnIndex(DBHelper.desa))
-                val kecamatan = cursor.getString(cursor.getColumnIndex(DBHelper.kecamatan))
-                val jumlahkk = cursor.getString(cursor.getColumnIndex(DBHelper.jumlahKK))
-                val jumlahPenghuni = cursor.getString(cursor.getColumnIndex(DBHelper.jumlahPenghuni))
-                val penghasilan = cursor.getString(cursor.getColumnIndex(DBHelper.penghasilanKK))
-                val luas = cursor.getString(cursor.getColumnIndex(DBHelper.luasRumah))
-                val pondasi = cursor.getString(cursor.getColumnIndex(DBHelper.fondasi))
-                val sloof = cursor.getString(cursor.getColumnIndex(DBHelper.sloof))
-                val kolom = cursor.getString(cursor.getColumnIndex(DBHelper.kolom))
-                val ring = cursor.getString(cursor.getColumnIndex(DBHelper.ringBalok))
-                val kuda = cursor.getString(cursor.getColumnIndex(DBHelper.kudaKuda))
-                val dinding = cursor.getString(cursor.getColumnIndex(DBHelper.dinding))
-                val lantai = cursor.getString(cursor.getColumnIndex(DBHelper.lantai))
-                val penutup = cursor.getString(cursor.getColumnIndex(DBHelper.penutupAtap))
-                val statusPenguasaanLahan = cursor.getString(cursor.getColumnIndex(DBHelper.statusPenguasaanLahan))
-                val longitude = cursor.getString(cursor.getColumnIndex(DBHelper.longitude))
-                val latitude = cursor.getString(cursor.getColumnIndex(DBHelper.latitude))
-                val ktp = cursor.getString(cursor.getColumnIndex(DBHelper.ktp))
-                val samping = cursor.getString(cursor.getColumnIndex(DBHelper.samping))
-                val dalam = cursor.getString(cursor.getColumnIndex(DBHelper.dalamRumah))
-                val status = cursor.getString(cursor.getColumnIndex(DBHelper.status))
-                val nilai = cursor.getString(cursor.getColumnIndex(DBHelper.nilai))
-                val date = cursor.getString(cursor.getColumnIndex(DBHelper.date))
-                val serverUid = cursor.getString(cursor.getColumnIndex(DBHelper.serverUid))
-
-                surveyList.add(
-                    SurveyModel(
-                        id1 = id.toInt(),
-                        uid1 = uid,
-                        nama1 = nama,
-                        nik1 = nik,
-                        noKK1 = nokk,
-                        alamat1 = alamat,
-                        desa1 = desa,
-                        kecamatan1 = kecamatan,
-                        jumlahKK1 = jumlahkk,
-                        jumlahPenghuni1 = jumlahPenghuni,
-                        penghasilan1 = penghasilan,
-                        luasRumah1 = luas,
-                        pondasi1 = pondasi,
-                        sloof1 = sloof,
-                        kolom1 = kolom,
-                        ringBalok1 = ring,
-                        kudaKuda1 = kuda,
-                        dinding1 = dinding,
-                        lantai1 = lantai,
-                        penutupAtap1 = penutup,
-                        statusPenguasaanLahan1 = statusPenguasaanLahan,
-                        longitude1 = longitude,
-                        latitude1 = latitude,
-                        ktp1 = ktp,
-                        samping1 = samping,
-                        dalamRumah1 = dalam,
-                        status1 = status,
-                        nilai1 = nilai,
-                        serverUid1 = serverUid,
-                        date1 = date,
-                    )
-                )
-
-
-                while (cursor.moveToNext()) {
+            if(cursor.moveToFirst()) {
+                while(!cursor.isAfterLast) {
                     val id = cursor.getString(cursor.getColumnIndex(DBHelper.ID_COL))
                     val uid = cursor.getString(cursor.getColumnIndex(DBHelper.uid))
                     val nama = cursor.getString(cursor.getColumnIndex(DBHelper.nama))
@@ -168,8 +99,10 @@ class HistoryActivity : AppCompatActivity() {
                     val desa = cursor.getString(cursor.getColumnIndex(DBHelper.desa))
                     val kecamatan = cursor.getString(cursor.getColumnIndex(DBHelper.kecamatan))
                     val jumlahkk = cursor.getString(cursor.getColumnIndex(DBHelper.jumlahKK))
-                    val jumlahPenghuni = cursor.getString(cursor.getColumnIndex(DBHelper.jumlahPenghuni))
-                    val penghasilan = cursor.getString(cursor.getColumnIndex(DBHelper.penghasilanKK))
+                    val jumlahPenghuni =
+                        cursor.getString(cursor.getColumnIndex(DBHelper.jumlahPenghuni))
+                    val penghasilan =
+                        cursor.getString(cursor.getColumnIndex(DBHelper.penghasilanKK))
                     val luas = cursor.getString(cursor.getColumnIndex(DBHelper.luasRumah))
                     val pondasi = cursor.getString(cursor.getColumnIndex(DBHelper.fondasi))
                     val sloof = cursor.getString(cursor.getColumnIndex(DBHelper.sloof))
@@ -179,14 +112,16 @@ class HistoryActivity : AppCompatActivity() {
                     val dinding = cursor.getString(cursor.getColumnIndex(DBHelper.dinding))
                     val lantai = cursor.getString(cursor.getColumnIndex(DBHelper.lantai))
                     val penutup = cursor.getString(cursor.getColumnIndex(DBHelper.penutupAtap))
-                    val statusPenguasaanLahan = cursor.getString(cursor.getColumnIndex(DBHelper.statusPenguasaanLahan))
+                    val statusPenguasaanLahan =
+                        cursor.getString(cursor.getColumnIndex(DBHelper.statusPenguasaanLahan))
                     val longitude = cursor.getString(cursor.getColumnIndex(DBHelper.longitude))
+                    val latitude = cursor.getString(cursor.getColumnIndex(DBHelper.latitude))
                     val ktp = cursor.getString(cursor.getColumnIndex(DBHelper.ktp))
                     val samping = cursor.getString(cursor.getColumnIndex(DBHelper.samping))
                     val dalam = cursor.getString(cursor.getColumnIndex(DBHelper.dalamRumah))
                     val status = cursor.getString(cursor.getColumnIndex(DBHelper.status))
-                    val nilai = cursor.getString(cursor.getColumnIndex(DBHelper.status))
-                    val date = cursor.getString(cursor.getColumnIndex(DBHelper.nilai))
+                    val nilai = cursor.getString(cursor.getColumnIndex(DBHelper.nilai))
+                    val date = cursor.getString(cursor.getColumnIndex(DBHelper.date))
                     val serverUid = cursor.getString(cursor.getColumnIndex(DBHelper.serverUid))
 
                     surveyList.add(
@@ -223,7 +158,144 @@ class HistoryActivity : AppCompatActivity() {
                             date1 = date,
                         )
                     )
+                    cursor.moveToNext()
                 }
+//            if(cursor.count > 0) {
+//                cursor.moveToFirst()
+//
+//                val id = cursor.getString(cursor.getColumnIndex(DBHelper.ID_COL))
+//                val uid = cursor.getString(cursor.getColumnIndex(DBHelper.uid))
+//                val nama = cursor.getString(cursor.getColumnIndex(DBHelper.nama))
+//                val nik = cursor.getString(cursor.getColumnIndex(DBHelper.nik))
+//                val nokk = cursor.getString(cursor.getColumnIndex(DBHelper.noKK))
+//                val alamat = cursor.getString(cursor.getColumnIndex(DBHelper.alamat))
+//                val desa = cursor.getString(cursor.getColumnIndex(DBHelper.desa))
+//                val kecamatan = cursor.getString(cursor.getColumnIndex(DBHelper.kecamatan))
+//                val jumlahkk = cursor.getString(cursor.getColumnIndex(DBHelper.jumlahKK))
+//                val jumlahPenghuni = cursor.getString(cursor.getColumnIndex(DBHelper.jumlahPenghuni))
+//                val penghasilan = cursor.getString(cursor.getColumnIndex(DBHelper.penghasilanKK))
+//                val luas = cursor.getString(cursor.getColumnIndex(DBHelper.luasRumah))
+//                val pondasi = cursor.getString(cursor.getColumnIndex(DBHelper.fondasi))
+//                val sloof = cursor.getString(cursor.getColumnIndex(DBHelper.sloof))
+//                val kolom = cursor.getString(cursor.getColumnIndex(DBHelper.kolom))
+//                val ring = cursor.getString(cursor.getColumnIndex(DBHelper.ringBalok))
+//                val kuda = cursor.getString(cursor.getColumnIndex(DBHelper.kudaKuda))
+//                val dinding = cursor.getString(cursor.getColumnIndex(DBHelper.dinding))
+//                val lantai = cursor.getString(cursor.getColumnIndex(DBHelper.lantai))
+//                val penutup = cursor.getString(cursor.getColumnIndex(DBHelper.penutupAtap))
+//                val statusPenguasaanLahan = cursor.getString(cursor.getColumnIndex(DBHelper.statusPenguasaanLahan))
+//                val longitude = cursor.getString(cursor.getColumnIndex(DBHelper.longitude))
+//                val latitude = cursor.getString(cursor.getColumnIndex(DBHelper.latitude))
+//                val ktp = cursor.getString(cursor.getColumnIndex(DBHelper.ktp))
+//                val samping = cursor.getString(cursor.getColumnIndex(DBHelper.samping))
+//                val dalam = cursor.getString(cursor.getColumnIndex(DBHelper.dalamRumah))
+//                val status = cursor.getString(cursor.getColumnIndex(DBHelper.status))
+//                val nilai = cursor.getString(cursor.getColumnIndex(DBHelper.nilai))
+//                val date = cursor.getString(cursor.getColumnIndex(DBHelper.date))
+//                val serverUid = cursor.getString(cursor.getColumnIndex(DBHelper.serverUid))
+//
+//                surveyList.add(
+//                    SurveyModel(
+//                        id1 = id.toInt(),
+//                        uid1 = uid,
+//                        nama1 = nama,
+//                        nik1 = nik,
+//                        noKK1 = nokk,
+//                        alamat1 = alamat,
+//                        desa1 = desa,
+//                        kecamatan1 = kecamatan,
+//                        jumlahKK1 = jumlahkk,
+//                        jumlahPenghuni1 = jumlahPenghuni,
+//                        penghasilan1 = penghasilan,
+//                        luasRumah1 = luas,
+//                        pondasi1 = pondasi,
+//                        sloof1 = sloof,
+//                        kolom1 = kolom,
+//                        ringBalok1 = ring,
+//                        kudaKuda1 = kuda,
+//                        dinding1 = dinding,
+//                        lantai1 = lantai,
+//                        penutupAtap1 = penutup,
+//                        statusPenguasaanLahan1 = statusPenguasaanLahan,
+//                        longitude1 = longitude,
+//                        latitude1 = latitude,
+//                        ktp1 = ktp,
+//                        samping1 = samping,
+//                        dalamRumah1 = dalam,
+//                        status1 = status,
+//                        nilai1 = nilai,
+//                        serverUid1 = serverUid,
+//                        date1 = date,
+//                    )
+//                )
+//
+//
+//                while (cursor.moveToNext()) {
+//                    val id = cursor.getString(cursor.getColumnIndex(DBHelper.ID_COL))
+//                    val uid = cursor.getString(cursor.getColumnIndex(DBHelper.uid))
+//                    val nama = cursor.getString(cursor.getColumnIndex(DBHelper.nama))
+//                    val nik = cursor.getString(cursor.getColumnIndex(DBHelper.nik))
+//                    val nokk = cursor.getString(cursor.getColumnIndex(DBHelper.noKK))
+//                    val alamat = cursor.getString(cursor.getColumnIndex(DBHelper.alamat))
+//                    val desa = cursor.getString(cursor.getColumnIndex(DBHelper.desa))
+//                    val kecamatan = cursor.getString(cursor.getColumnIndex(DBHelper.kecamatan))
+//                    val jumlahkk = cursor.getString(cursor.getColumnIndex(DBHelper.jumlahKK))
+//                    val jumlahPenghuni = cursor.getString(cursor.getColumnIndex(DBHelper.jumlahPenghuni))
+//                    val penghasilan = cursor.getString(cursor.getColumnIndex(DBHelper.penghasilanKK))
+//                    val luas = cursor.getString(cursor.getColumnIndex(DBHelper.luasRumah))
+//                    val pondasi = cursor.getString(cursor.getColumnIndex(DBHelper.fondasi))
+//                    val sloof = cursor.getString(cursor.getColumnIndex(DBHelper.sloof))
+//                    val kolom = cursor.getString(cursor.getColumnIndex(DBHelper.kolom))
+//                    val ring = cursor.getString(cursor.getColumnIndex(DBHelper.ringBalok))
+//                    val kuda = cursor.getString(cursor.getColumnIndex(DBHelper.kudaKuda))
+//                    val dinding = cursor.getString(cursor.getColumnIndex(DBHelper.dinding))
+//                    val lantai = cursor.getString(cursor.getColumnIndex(DBHelper.lantai))
+//                    val penutup = cursor.getString(cursor.getColumnIndex(DBHelper.penutupAtap))
+//                    val statusPenguasaanLahan = cursor.getString(cursor.getColumnIndex(DBHelper.statusPenguasaanLahan))
+//                    val longitude = cursor.getString(cursor.getColumnIndex(DBHelper.longitude))
+//                    val ktp = cursor.getString(cursor.getColumnIndex(DBHelper.ktp))
+//                    val samping = cursor.getString(cursor.getColumnIndex(DBHelper.samping))
+//                    val dalam = cursor.getString(cursor.getColumnIndex(DBHelper.dalamRumah))
+//                    val status = cursor.getString(cursor.getColumnIndex(DBHelper.status))
+//                    val nilai = cursor.getString(cursor.getColumnIndex(DBHelper.status))
+//                    val date = cursor.getString(cursor.getColumnIndex(DBHelper.nilai))
+//                    val serverUid = cursor.getString(cursor.getColumnIndex(DBHelper.serverUid))
+//
+//                    surveyList.add(
+//                        SurveyModel(
+//                            id1 = id.toInt(),
+//                            uid1 = uid,
+//                            nama1 = nama,
+//                            nik1 = nik,
+//                            noKK1 = nokk,
+//                            alamat1 = alamat,
+//                            desa1 = desa,
+//                            kecamatan1 = kecamatan,
+//                            jumlahKK1 = jumlahkk,
+//                            jumlahPenghuni1 = jumlahPenghuni,
+//                            penghasilan1 = penghasilan,
+//                            luasRumah1 = luas,
+//                            pondasi1 = pondasi,
+//                            sloof1 = sloof,
+//                            kolom1 = kolom,
+//                            ringBalok1 = ring,
+//                            kudaKuda1 = kuda,
+//                            dinding1 = dinding,
+//                            lantai1 = lantai,
+//                            penutupAtap1 = penutup,
+//                            statusPenguasaanLahan1 = statusPenguasaanLahan,
+//                            longitude1 = longitude,
+//                            latitude1 = latitude,
+//                            ktp1 = ktp,
+//                            samping1 = samping,
+//                            dalamRumah1 = dalam,
+//                            status1 = status,
+//                            nilai1 = nilai,
+//                            serverUid1 = serverUid,
+//                            date1 = date,
+//                        )
+//                    )
+//                }
 
                 adapter?.setData(surveyList, "local")
                 cursor.close()

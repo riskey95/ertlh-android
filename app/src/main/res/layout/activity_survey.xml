@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/poppins"
-                android:text="@string/foto_ktp"
+                android:text="@string/foto_tampak_depan"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -71,7 +71,7 @@
 
 
                     <ImageView
-                        android:id="@+id/ktp"
+                        android:id="@+id/fotoTampakDepan"
                         android:layout_width="0dp"
                         android:layout_height="150dp"
                         android:scaleType="centerCrop"
@@ -81,7 +81,7 @@
 
 
                     <ImageView
-                        android:id="@+id/ktpHint"
+                        android:id="@+id/fotoTampakDepanHint"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:src="@drawable/ic_baseline_add_circle_outline_24"
@@ -101,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/poppins"
-                android:text="@string/foto_tampak_samping_depan"
+                android:text="@string/foto_tampak_samping"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />

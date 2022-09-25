@@ -61,7 +61,7 @@ class HistoryDetailActivity : AppCompatActivity() {
         binding.apply {
             if (model?.status1 == "Belum Diupload") {
                 save.visibility = View.VISIBLE
-                ktpHint.visibility = View.VISIBLE
+                fotoTampakDepanHint.visibility = View.VISIBLE
                 fotoTampakSampingHint.visibility = View.VISIBLE
                 fotoDalamRumahHint.visibility = View.VISIBLE
             }
@@ -205,7 +205,7 @@ class HistoryDetailActivity : AppCompatActivity() {
             if (ktpp != "") {
                 Glide.with(this@HistoryDetailActivity)
                     .load(ktpp)
-                    .into(ktp)
+                    .into(fotoTampakDepan)
             }
 
             if (samping != "") {
@@ -225,7 +225,7 @@ class HistoryDetailActivity : AppCompatActivity() {
                 onBackPressed()
             }
 
-            ktpHint.setOnClickListener {
+            fotoTampakDepanHint.setOnClickListener {
                 showProgressBar()
                 ImagePicker.with(this@HistoryDetailActivity)
                     .cameraOnly()
@@ -263,7 +263,7 @@ class HistoryDetailActivity : AppCompatActivity() {
                 }
             }
 
-            ktp.setOnClickListener {
+            fotoTampakDepan.setOnClickListener {
                 val intent = Intent(this@HistoryDetailActivity, PhotoActivity::class.java)
                 intent.putExtra(PhotoActivity.option, "KTP")
                 intent.putExtra(PhotoActivity.name, model?.nama1)
@@ -475,7 +475,7 @@ class HistoryDetailActivity : AppCompatActivity() {
                     ktpp = data?.data.toString()
                     Glide.with(this)
                         .load(data?.data)
-                        .into(binding.ktp)
+                        .into(binding.fotoTampakDepan)
                 }
                 REQUEST_SAMPING_GALLERY -> {
                     samping = data?.data.toString()

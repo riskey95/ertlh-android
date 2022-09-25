@@ -3,7 +3,7 @@
     <string name="survey_baru">Survey Baru</string>
     <string name="simpan_survey">Simpan Survey</string>
     <string name="foto_dalam_rumah">Foto Dalam Rumah</string>
-    <string name="foto_tampak_samping_depan">Foto Tampak Samping Depan</string>
+    <string name="foto_tampak_samping">Foto Tampak Samping Rumah</string>
     <string name="nama">Nama</string>
     <string name="fondasi">Fondasi</string>
     <string name="nik">NIK</string>
@@ -16,7 +16,7 @@
     <string name="lantai">Lantai</string>
     <string name="alamat_dusun_rt_rw">Alamat (Dusun, RT/RW)</string>
     <string name="dinding">Dinding</string>
-    <string name="foto_ktp">Foto KTP</string>
+    <string name="foto_tampak_depan">Foto Tampak Depan Rumah</string>
     <string name="status_penguasaan_lahan">Status penguasaan lahan</string>
     <string name="penutup_atap">Penutup Atap</string>
     <string name="titik_koordinat_latitude_longitude">Titik Koordinat (Latitude - Longitude)</string>

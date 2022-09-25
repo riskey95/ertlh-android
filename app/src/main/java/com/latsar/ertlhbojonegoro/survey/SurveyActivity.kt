@@ -80,7 +80,7 @@ class SurveyActivity : AppCompatActivity() {
                 onBackPressed()
             }
 
-            ktpHint.setOnClickListener {
+            fotoTampakDepanHint.setOnClickListener {
                 showProgressBar()
                 ImagePicker.with(this@SurveyActivity)
                     .cameraOnly()
@@ -405,7 +405,7 @@ class SurveyActivity : AppCompatActivity() {
 
                 val db = DBHelper(this@SurveyActivity, null)
 
-                val serverUid = System.currentTimeMillis().toString()
+                val serverUid = uid + System.currentTimeMillis().toString()
                 db.addSurvey(
                     uid,
                     nama,
@@ -454,7 +454,7 @@ class SurveyActivity : AppCompatActivity() {
                     ktpp = data?.data.toString()
                     Glide.with(this)
                         .load(data?.data)
-                        .into(binding.ktp)
+                        .into(binding.fotoTampakDepan)
                 }
                 REQUEST_SAMPING_GALLERY -> {
                     samping = data?.data.toString()
@@ -719,7 +719,7 @@ class SurveyActivity : AppCompatActivity() {
                     uid = ""
                     statusPenguasaanLahan = ""
                     unchecked()
-                    ktp.setImageResource(0)
+                    fotoTampakDepan.setImageResource(0)
                     fotoTampakSamping.setImageResource(0)
                     fotoDalamRumah.setImageResource(0)
                 }
