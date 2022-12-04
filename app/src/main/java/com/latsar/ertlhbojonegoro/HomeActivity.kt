@@ -62,7 +62,6 @@ class HomeActivity : AppCompatActivity() {
                 startActivity(intent)
             }
             statusData.setOnClickListener {
-                Log.e("Cek", "OK")
                 startActivity(Intent(this@HomeActivity, HistoryServerActivity::class.java))
             }
             syncData.setOnClickListener {
@@ -408,7 +407,8 @@ class HomeActivity : AppCompatActivity() {
         binding.rvSurvery.layoutManager = layoutManager
         adapter = SurveyAdapter()
         binding.rvSurvery.adapter = adapter
-        adapter?.setData(surveyList)
+        var tenLatestData = surveyList.take(10)
+        adapter?.setData(tenLatestData as ArrayList<SurveyModel>)
     }
 
     private fun checkRole() {

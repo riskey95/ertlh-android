@@ -20,6 +20,7 @@ import androidx.core.app.ActivityCompat
 import com.bumptech.glide.Glide
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.android.gms.location.*
+import com.latsar.ertlhbojonegoro.HomeActivity
 import com.latsar.ertlhbojonegoro.databinding.ActivitySurveyBinding
 import com.latsar.ertlhbojonegoro.utils.DBHelper
 import com.latsar.ertlhbojonegoro.R
@@ -50,7 +51,7 @@ class SurveyActivity : AppCompatActivity() {
     private var ktpp: String = ""
     private var samping: String = ""
     private var dalamRumah: String = ""
-    private val REQUEST_KTP_GALLERY = 1001
+    private val REQUEST_DEPAN_GALLERY = 1001
     private val REQUEST_SAMPING_GALLERY = 1002
     private val REQUEST_DALAM_RUMAH_GALLERY = 1003
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
@@ -83,27 +84,30 @@ class SurveyActivity : AppCompatActivity() {
             fotoTampakDepanHint.setOnClickListener {
                 showProgressBar()
                 ImagePicker.with(this@SurveyActivity)
-                    .cameraOnly()
-//                    .compress(1024)
+//                    .cameraOnly()
+                    .galleryOnly()
+                    .compress(512)
                     .maxResultSize(600,800)
-                    .start(REQUEST_KTP_GALLERY)
+                    .start(REQUEST_DEPAN_GALLERY)
             }
 
             fotoTampakSampingHint.setOnClickListener {
                 showProgressBar()
                 ImagePicker.with(this@SurveyActivity)
-                    .cameraOnly()
-//                    .compress(1024)
-                    .maxResultSize(800,1200)
+//                    .cameraOnly()
+                    .galleryOnly()
+                    .compress(512)
+                    .maxResultSize(600,800)
                     .start(REQUEST_SAMPING_GALLERY)
             }
 
             fotoDalamRumahHint.setOnClickListener {
                 showProgressBar()
                 ImagePicker.with(this@SurveyActivity)
-                    .cameraOnly()
-//                    .compress(1024)
-                    .maxResultSize(800,1200)
+//                    .cameraOnly()
+                    .galleryOnly()
+                    .compress(512)
+                    .maxResultSize(600,800)
                     .start(REQUEST_DALAM_RUMAH_GALLERY)
             }
 
@@ -270,7 +274,7 @@ class SurveyActivity : AppCompatActivity() {
             val latitude = latitude.text.toString().trim()
             val struktur = listOf(fondasi, sloof, kolom, ringBalok, kudaKuda)
             val nonStuktur = listOf(dinding, lantai, penutupAtap)
-            var nilai =""
+            val nilai: String
 
             if (statusPenguasaanLahan == "C"){
                 nilai = "Tidak Memenuhi Syarat"
@@ -450,7 +454,7 @@ class SurveyActivity : AppCompatActivity() {
         mProgressDialog?.dismiss()
         if (resultCode == RESULT_OK) {
             when (requestCode) {
-                REQUEST_KTP_GALLERY -> {
+                REQUEST_DEPAN_GALLERY -> {
                     ktpp = data?.data.toString()
                     Glide.with(this)
                         .load(data?.data)
@@ -723,6 +727,8 @@ class SurveyActivity : AppCompatActivity() {
                     fotoTampakSamping.setImageResource(0)
                     fotoDalamRumah.setImageResource(0)
                 }
+                val intent = Intent(this@SurveyActivity, HomeActivity::class.java)
+                startActivity(intent)
             }
             .show()
     }

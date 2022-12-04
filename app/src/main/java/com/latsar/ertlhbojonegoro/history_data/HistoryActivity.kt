@@ -39,9 +39,9 @@ class HistoryActivity : AppCompatActivity() {
             onBackPressed()
         }
 
-        binding.optionMenu.setOnClickListener {
-            showOptionMenu()
-        }
+//        binding.optionMenu.setOnClickListener {
+//            showOptionMenu()
+//        }
 
 
     }

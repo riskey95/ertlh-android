@@ -85,7 +85,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun autoLogin() {
         if(FirebaseAuth.getInstance().currentUser != null) {
-            Log.e("dasadas", FirebaseAuth.getInstance().currentUser!!.uid)
+//            Log.e("dasadas", FirebaseAuth.getInstance().currentUser!!.uid)
             binding.progressBar.visibility = View.GONE
             startActivity(Intent(this, HomeActivity::class.java))
             finish()
